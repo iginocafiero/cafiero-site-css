@@ -210,3 +210,21 @@
   }
 
 }
+
+/* ============================================
+   Homepage — Image CDN Optimization
+   Override raw Gemini PNG background-images with
+   Squarespace CDN format=1500w for ~5x size reduction
+   ============================================ */
+
+#cc-hero-img {
+  background-image: url('https://images.squarespace-cdn.com/content/69abf40dda0d6b29e5683736/cb498433-9f47-41f4-877b-c82717038015/Gemini_Generated_Image_kymizukymizukymi.png?format=1500w') !important;
+}
+
+#cc-ritual-img {
+  background-image: url('https://images.squarespace-cdn.com/content/69abf40dda0d6b29e5683736/266001c5-5bbc-4e8a-b19a-2f16984ec164/Gemini_Generated_Image_uybz6iuybz6iuybz.png?format=1500w') !important;
+}
+
+#cc-sicily-img {
+  background-image: url('https://images.squarespace-cdn.com/content/69abf40dda0d6b29e5683736/5155bf0e-1027-46f9-a005-71b305cd302c/Gemini_Generated_Image_gpa9v4gpa9v4gpa9+%281%29.png?format=1500w') !important;
+}
