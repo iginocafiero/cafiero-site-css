@@ -213,18 +213,45 @@
 
 /* ============================================
    Homepage — Image CDN Optimization
-   Override raw Gemini PNG background-images with
-   Squarespace CDN format=1500w for ~5x size reduction
+   Desktop: use format=1500w (already set in inline HTML)
+   Mobile: override to format=750w (2x retina is plenty
+   for 375px screens, ~50% smaller than 1500w)
    ============================================ */
 
+/* Desktop — keep 1500w for large screens */
 #cc-hero-img {
   background-image: url('https://images.squarespace-cdn.com/content/69abf40dda0d6b29e5683736/cb498433-9f47-41f4-877b-c82717038015/Gemini_Generated_Image_kymizukymizukymi.png?format=1500w') !important;
 }
-
 #cc-ritual-img {
   background-image: url('https://images.squarespace-cdn.com/content/69abf40dda0d6b29e5683736/266001c5-5bbc-4e8a-b19a-2f16984ec164/Gemini_Generated_Image_uybz6iuybz6iuybz.png?format=1500w') !important;
 }
-
 #cc-sicily-img {
   background-image: url('https://images.squarespace-cdn.com/content/69abf40dda0d6b29e5683736/5155bf0e-1027-46f9-a005-71b305cd302c/Gemini_Generated_Image_gpa9v4gpa9v4gpa9+%281%29.png?format=1500w') !important;
+}
+
+/* Mobile — serve smaller images */
+@media (max-width: 768px) {
+  #cc-hero-img {
+    background-image: url('https://images.squarespace-cdn.com/content/69abf40dda0d6b29e5683736/cb498433-9f47-41f4-877b-c82717038015/Gemini_Generated_Image_kymizukymizukymi.png?format=750w') !important;
+  }
+  #cc-ritual-img {
+    background-image: url('https://images.squarespace-cdn.com/content/69abf40dda0d6b29e5683736/266001c5-5bbc-4e8a-b19a-2f16984ec164/Gemini_Generated_Image_uybz6iuybz6iuybz.png?format=750w') !important;
+  }
+  #cc-sicily-img {
+    background-image: url('https://images.squarespace-cdn.com/content/69abf40dda0d6b29e5683736/5155bf0e-1027-46f9-a005-71b305cd302c/Gemini_Generated_Image_gpa9v4gpa9v4gpa9+%281%29.png?format=750w') !important;
+  }
+  #cc-wedding-img {
+    background-image: url('https://images.squarespace-cdn.com/content/69abf40dda0d6b29e5683736/578a5481-6038-4868-880b-10af3cff0a21/Gemini_Generated_Image_idw53aidw53aidw5.png?format=750w') !important;
+  }
+  #cc-gift-img {
+    background-image: url('https://images.squarespace-cdn.com/content/69abf40dda0d6b29e5683736/5589fbef-6c24-4146-8bdb-df9def7be93e/Gemini_Generated_Image_2cjvb72cjvb72cjv.png?format=750w') !important;
+  }
+
+  /* Lazy-load: hide below-fold background images until JS reveals them */
+  #cc-ritual-img.cc-lazy,
+  #cc-wedding-img.cc-lazy,
+  #cc-gift-img.cc-lazy,
+  #cc-sicily-img.cc-lazy {
+    background-image: none !important;
+  }
 }
